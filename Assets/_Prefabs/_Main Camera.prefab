@@ -1,0 +1,141 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6741339420313872764
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6741339420313872761}
+  - component: {fileID: 6741339420313872762}
+  - component: {fileID: 6741339420313872763}
+  - component: {fileID: 6741339420313872760}
+  m_Layer: 0
+  m_Name: _Main Camera
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6741339420313872761
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6741339420313872764}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &6741339420313872762
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6741339420313872764}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 100
+  field of view: 60
+  orthographic: 1
+  orthographic size: 40
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!81 &6741339420313872763
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6741339420313872764}
+  m_Enabled: 1
+--- !u!114 &6741339420313872760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6741339420313872764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5f5275b340064947b68dcb5d62786ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PrefabEnemies:
+  - {fileID: 1250859638142151882, guid: 3b0e700dcfaed1a4d85e66e552d78713, type: 3}
+  - {fileID: 3028302305239529133, guid: 73f8ebff9847bcd408dec72851d76c13, type: 3}
+  - {fileID: 3028302305239529133, guid: b2743ad8ed8c4cb4486fa7432ad42b3f, type: 3}
+  - {fileID: 3028302305239529133, guid: 944d4d00efed5fa4abad5eaa26d70a86, type: 3}
+  - {fileID: 3028302305239529133, guid: fb0be82b625d51442b9c08f59c8fbc87, type: 3}
+  EnemySpawnPerSecond: 0.5
+  EnemySpawnPadding: 1.5
+  WeaponDefinitions:
+  - Type: 1
+    Letter: B
+    Color: {r: 0.745283, g: 0.7417675, b: 0.7417675, a: 1}
+    ProjectilePrefab: {fileID: 4725855955175797139, guid: 1956b5d108bed3f4fa9e1d2400c3bdc4,
+      type: 3}
+    ProjectileColor: {r: 1, g: 1, b: 1, a: 1}
+    DamageOnHit: 1
+    ContinuousDamage: 0
+    DelayBetweenShots: 0.2
+    Velocity: 50
+  - Type: 2
+    Letter: S
+    Color: {r: 0, g: 0, b: 0, a: 1}
+    ProjectilePrefab: {fileID: 0}
+    ProjectileColor: {r: 0, g: 0, b: 0, a: 1}
+    DamageOnHit: 1
+    ContinuousDamage: 0
+    DelayBetweenShots: 0.4
+    Velocity: 50
+  - Type: 6
+    Letter: O
+    Color: {r: 0.23448345, g: 1, b: 0.02352941, a: 1}
+    ProjectilePrefab: {fileID: 0}
+    ProjectileColor: {r: 0, g: 0, b: 0, a: 1}
+    DamageOnHit: 0
+    ContinuousDamage: 0
+    DelayBetweenShots: 0
+    Velocity: 0
+  PrefabPowerUp: {fileID: 5314553175856551534, guid: cf592faf7432f1348bc7190559e4da1e,
+    type: 3}
+  PowerUpFrequency: 01000000010000000200000006000000
+  ________________________________: 0
+  ActiveWepTypes: 
+  enemySpawnRate: 0

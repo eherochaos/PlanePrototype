@@ -82,18 +82,17 @@ namespace Assets._Scripts
             this.Invoke("SpawnEnemy",this.enemySpawnRate);
         }
 
-        public void ShipDestroyed(Enemy e)
+
+        public void ShipDestroyed(Vector3 pos, float dropChance)
         {
-            //通过主控函数管理道具掉落
-            if (Random.value <= e.PowerUpDropChance)
-            {
-                var selectRandom = Random.Range(0, this.PowerUpFrequency.Length);
-                var powerUpType = this.PowerUpFrequency[selectRandom];
-                var go = Instantiate(this.PrefabPowerUp) as GameObject;
-                var powerUp = go.GetComponent<PowerUp>();
-                powerUp.SetType(powerUpType);
-                powerUp.transform.position = e.transform.position;
-            }
+            if (!(Random.value <= dropChance)) return;
+
+            var selectRandom = Random.Range(0, this.PowerUpFrequency.Length);
+            var powerUpType = this.PowerUpFrequency[selectRandom];
+            var go = Instantiate(this.PrefabPowerUp) as GameObject;
+            var powerUp = go.GetComponent<PowerUp>();
+            powerUp.SetType(powerUpType);
+            powerUp.transform.position = pos;
         }
 
         public void DelayedRestart(float delay)

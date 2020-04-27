@@ -85,19 +85,21 @@ namespace Assets._Scripts
                         break;
                     }
 
+                    //查找碰撞体连接物
                     var goHit = coll.contacts[0].thisCollider.gameObject;
                     var partHit = this.FindPart(goHit);
-                    if (partHit == null)
-                    {
-                        goHit = coll.contacts[0].otherCollider.gameObject;
-                        partHit = this.FindPart(goHit);
-                    }
+                    // if (partHit == null)
+                    // {
+                    //     //有可能第一碰撞物不是敌人（不过这段代码在碰撞机制中不会发生
+                    //     goHit = coll.contacts[0].otherCollider.gameObject;
+                    //     partHit = this.FindPart(goHit);
+                    // }
 
                     if (partHit.ProtectedBy != null)
                     {
                         foreach (var s in partHit.ProtectedBy)
                         {
-                            if (Destroyed(s)) continue;
+                            if (this.Destroyed(s)) continue;
                             //炮弹消失
                             Destroy(other);
                             return;
@@ -105,7 +107,7 @@ namespace Assets._Scripts
 
                         partHit.Health -= Main.WeaponDic[p.Type].DamageOnHit;
                         this.ShowLocalizedDamage(partHit.Mat);
-                        //部件生命值降低时
+                        //部件生命值归零时
                         if (partHit.Health <= 0)
                         {
                             partHit.Go.SetActive(false);
@@ -114,14 +116,14 @@ namespace Assets._Scripts
                         var allDestroyed = true;
                         foreach (var part in this.Parts)
                         {
-                            if (Destroyed(part)) continue;
+                            if (this.Destroyed(part)) continue;
                             allDestroyed = false;
                             break;
                         }
 
                         if (allDestroyed)
                         {
-                            Main.S.ShipDestroyed(this);
+                            Main.S.ShipDestroyed(this.Pos,this.PowerUpDropChance);
                             Destroy(this.gameObject);
                         }
 

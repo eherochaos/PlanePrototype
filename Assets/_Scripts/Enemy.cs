@@ -2,6 +2,8 @@
 
 namespace Assets._Scripts
 {
+    using System;
+
     using Assets.Utils;
 
     public class Enemy : MonoBehaviour
@@ -11,15 +13,15 @@ namespace Assets._Scripts
         public float FireRate = 0.3f;
 
         public float Health = 10;
-
+        
         public int Score = 100;
 
         public int ShowDamageForFrames = 4;
 
-        public float PowerUpDropChance = 1f;
+        public float PowerUpDropChance = 0.5f;
 
         public bool ________________________________;
-
+        
         public Color[] OriginalColors;
 
         public Material[] Materials;
@@ -105,7 +107,7 @@ namespace Assets._Scripts
                     this.Health -= Main.WeaponDic[p.Type].DamageOnHit;
                     if (this.Health <= 0)
                     {
-                        Main.S.ShipDestroyed(this);
+                        Main.S.ShipDestroyed(this.Pos,this.PowerUpDropChance);
                         Destroy((this.gameObject));
                     }
                     Destroy(other);

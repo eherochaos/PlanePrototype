@@ -252,7 +252,12 @@ MonoBehaviour:
   FireRate: 0.3
   Health: 10
   Score: 100
+  ShowDamageForFrames: 4
+  PowerUpDropChance: 1
   ________________________________: 0
+  OriginalColors: []
+  Materials: []
+  RemainingDamageFrames: 0
   Bounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}

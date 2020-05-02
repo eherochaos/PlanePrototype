@@ -6,6 +6,8 @@ namespace Assets._Scripts
 
     using Assets.Utils;
 
+    using NaughtyAttributes;
+
     public class Enemy : MonoBehaviour
     {
         public float Speed = 10f;
@@ -32,6 +34,9 @@ namespace Assets._Scripts
 
         public Vector3 BoundsCenterOffset;
 
+        public float EnemySpawnPaddingX => this.Bounds.max.x - this.Bounds.center.x + 1.5f;
+
+        public float EnemySpawnPaddingY => this.Bounds.max.y - this.Bounds.center.y + 1.5f;
         private void Update()
         {
             this.Move();
@@ -45,6 +50,7 @@ namespace Assets._Scripts
 
         public virtual void Move()
         {
+            //直线模式
             var temPos = this.Pos;
             temPos.y -= this.Speed * Time.deltaTime;
             this.Pos = temPos;
@@ -59,6 +65,12 @@ namespace Assets._Scripts
 
         void Awake()
         {
+            if (this.Bounds.size == Vector3.zero)
+            {
+                this.Bounds = Utils.CombineBoundsOfChildren(this.gameObject);
+                this.BoundsCenterOffset = this.Bounds.center - this.transform.position;
+            }
+
             this.Materials = Utils.GetAllMaterials(this.gameObject);
             this.OriginalColors = new Color[this.Materials.Length];
             for (var i = 0; i < this.Materials.Length; i++)
@@ -70,12 +82,6 @@ namespace Assets._Scripts
 
         private void CheckOffscreen()
         {
-            if (this.Bounds.size == Vector3.zero)
-            {
-                this.Bounds = Utils.CombineBoundsOfChildren(this.gameObject);
-                this.BoundsCenterOffset = this.Bounds.center - this.transform.position;
-            }
-
             this.Bounds.center = this.transform.position + this.BoundsCenterOffset;
 
             var off = Utils.ScreenBoundsCheck(this.Bounds, BoundsTest.OffScreen);

@@ -44,11 +44,10 @@ namespace Assets._Scripts
         private void InitMovement()
         {
             var p1 = Vector3.zero;
-            var enemySpawnPadding = Main.S.EnemySpawnPadding;
             var camBounds = Utils.CamBounds;
 
-            p1.x = Random.Range(camBounds.min.x + enemySpawnPadding, camBounds.max.x - enemySpawnPadding);
-            p1.y = Random.Range(camBounds.min.y + enemySpawnPadding, camBounds.max.y - enemySpawnPadding);
+            p1.x = Random.Range(camBounds.min.x + this.EnemySpawnPaddingX, camBounds.max.x - this.EnemySpawnPaddingX);
+            p1.y = Random.Range(camBounds.min.y + this.EnemySpawnPaddingY, camBounds.max.y - this.EnemySpawnPaddingY);
 
             this.Points[0] = this.Points[1];
             this.Points[1] = p1;

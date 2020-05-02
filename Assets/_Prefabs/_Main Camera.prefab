@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6741339420313872762}
   - component: {fileID: 6741339420313872763}
   - component: {fileID: 6741339420313872760}
+  - component: {fileID: 1642284351}
   m_Layer: 0
   m_Name: _Main Camera
   m_TagString: MainCamera
@@ -98,12 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PrefabEnemies:
   - {fileID: 1250859638142151882, guid: 3b0e700dcfaed1a4d85e66e552d78713, type: 3}
-  - {fileID: 3028302305239529133, guid: 73f8ebff9847bcd408dec72851d76c13, type: 3}
-  - {fileID: 3028302305239529133, guid: b2743ad8ed8c4cb4486fa7432ad42b3f, type: 3}
-  - {fileID: 3028302305239529133, guid: 944d4d00efed5fa4abad5eaa26d70a86, type: 3}
-  - {fileID: 3028302305239529133, guid: fb0be82b625d51442b9c08f59c8fbc87, type: 3}
   EnemySpawnPerSecond: 0.5
-  EnemySpawnPadding: 1.5
   WeaponDefinitions:
   - Type: 1
     Letter: B
@@ -139,3 +135,21 @@ MonoBehaviour:
   ________________________________: 0
   ActiveWepTypes: 
   enemySpawnRate: 0
+--- !u!114 &1642284351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6741339420313872764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c672b8827479b7140b2739048c03056b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Poi: {fileID: 0}
+  Panels:
+  - {fileID: 0}
+  - {fileID: 0}
+  ScrollSpeed: -30
+  MotionMult: 0.25

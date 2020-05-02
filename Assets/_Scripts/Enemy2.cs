@@ -29,12 +29,12 @@ namespace Assets._Scripts
             var cameraBoundMax = Utils.CamBounds.max;
             var v = Vector3.zero;
 
-            v.x = cameraBoundMin.x - Main.S.EnemySpawnPadding;
+            v.x = cameraBoundMin.x - this.EnemySpawnPaddingX;
             v.y = Random.Range(cameraBoundMin.y, cameraBoundMax.y);
             this.Points[0] = v;
 
             v = Vector3.zero;
-            v.x = cameraBoundMax.x + Main.S.EnemySpawnPadding;
+            v.x = cameraBoundMax.x + this.EnemySpawnPaddingX;
             v.y = Random.Range(cameraBoundMin.y, cameraBoundMax.y);
             this.Points[1] = v;
 

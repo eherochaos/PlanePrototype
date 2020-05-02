@@ -23,9 +23,9 @@ namespace Assets._Scripts
 
             this.Points[0] = this.Pos;
 
-            var xMin = Utils.CamBounds.min.x + Main.S.EnemySpawnPadding;
+            var xMin = Utils.CamBounds.min.x + this.EnemySpawnPaddingX;
 
-            var xMax = Utils.CamBounds.max.x + Main.S.EnemySpawnPadding;
+            var xMax = Utils.CamBounds.max.x + this.EnemySpawnPaddingX;
 
             Vector3 v;
 

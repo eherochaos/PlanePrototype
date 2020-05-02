@@ -263,5 +263,7 @@ MonoBehaviour:
     m_Extent: {x: 0, y: 0, z: 0}
   BoundsCenterOffset: {x: 0, y: 0, z: 0}
   waveFrequency: 2
+  StopArray: 1
+  Array: 00000000
   waveWidth: 4
   waveRotY: 50

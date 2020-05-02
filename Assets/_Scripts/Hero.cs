@@ -87,7 +87,7 @@
             // ReSharper disable once CompareOfFloatsByEqualityOperator
             if (Input.GetAxis("Jump") == 1)
             {
-                FireDelegate?.Invoke();
+                this.FireDelegate?.Invoke();
             }
         }
 
@@ -134,13 +134,14 @@
                     if (pu.Type == this.Weapons[0].Type)
                     {
                         var w = this.GetEmptyWeaponSlot;
-                        if(w != null) w.SetType(pu.Type);
-                        else
-                        {
+                        if (w != null) w.SetType(pu.Type);
+                    }
+                    else
+                    {
                             this.ClearWeapons();
                             this.Weapons[0].SetType(pu.Type);
-                        }
                     }
+                    
                     break;
             }
             pu.AbsorbedBy(this.gameObject);

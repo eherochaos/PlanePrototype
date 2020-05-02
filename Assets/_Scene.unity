@@ -288,30 +288,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 210781811}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1642284350 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6741339420313872764, guid: 610d188cc28bb4c4baf76f738ce5ac10,
-    type: 3}
-  m_PrefabInstance: {fileID: 1910098115}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1642284351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1642284350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c672b8827479b7140b2739048c03056b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Poi: {fileID: 364141151}
-  Panels:
-  - {fileID: 1916276996881062737}
-  - {fileID: 4175271251379839950}
-  ScrollSpeed: -30
-  MotionMult: 0.25
 --- !u!1001 &1910098115
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -319,6 +295,59 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1642284351, guid: 610d188cc28bb4c4baf76f738ce5ac10, type: 3}
+      propertyPath: Poi
+      value: 
+      objectReference: {fileID: 364141151}
+    - target: {fileID: 1642284351, guid: 610d188cc28bb4c4baf76f738ce5ac10, type: 3}
+      propertyPath: Panels.Array.data[0]
+      value: 
+      objectReference: {fileID: 1916276996881062737}
+    - target: {fileID: 1642284351, guid: 610d188cc28bb4c4baf76f738ce5ac10, type: 3}
+      propertyPath: Panels.Array.data[1]
+      value: 
+      objectReference: {fileID: 4175271251379839950}
+    - target: {fileID: 6741339420313872760, guid: 610d188cc28bb4c4baf76f738ce5ac10,
+        type: 3}
+      propertyPath: WeaponDefinitions.Array.data[1].ProjectilePrefab
+      value: 
+      objectReference: {fileID: 4725855955175797139, guid: 1956b5d108bed3f4fa9e1d2400c3bdc4,
+        type: 3}
+    - target: {fileID: 6741339420313872760, guid: 610d188cc28bb4c4baf76f738ce5ac10,
+        type: 3}
+      propertyPath: WeaponDefinitions.Array.data[1].ProjectileColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6741339420313872760, guid: 610d188cc28bb4c4baf76f738ce5ac10,
+        type: 3}
+      propertyPath: WeaponDefinitions.Array.data[1].ProjectileColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6741339420313872760, guid: 610d188cc28bb4c4baf76f738ce5ac10,
+        type: 3}
+      propertyPath: WeaponDefinitions.Array.data[1].ProjectileColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6741339420313872760, guid: 610d188cc28bb4c4baf76f738ce5ac10,
+        type: 3}
+      propertyPath: WeaponDefinitions.Array.data[1].ProjectileColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6741339420313872760, guid: 610d188cc28bb4c4baf76f738ce5ac10,
+        type: 3}
+      propertyPath: WeaponDefinitions.Array.data[1].Color.r
+      value: 0.74509805
+      objectReference: {fileID: 0}
+    - target: {fileID: 6741339420313872760, guid: 610d188cc28bb4c4baf76f738ce5ac10,
+        type: 3}
+      propertyPath: WeaponDefinitions.Array.data[1].Color.g
+      value: 0.7411765
+      objectReference: {fileID: 0}
+    - target: {fileID: 6741339420313872760, guid: 610d188cc28bb4c4baf76f738ce5ac10,
+        type: 3}
+      propertyPath: WeaponDefinitions.Array.data[1].Color.b
+      value: 0.7411765
+      objectReference: {fileID: 0}
     - target: {fileID: 6741339420313872761, guid: 610d188cc28bb4c4baf76f738ce5ac10,
         type: 3}
       propertyPath: m_LocalPosition.x

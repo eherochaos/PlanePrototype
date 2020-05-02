@@ -5,8 +5,12 @@ namespace Assets._Scripts
     using System;
     using System.ComponentModel;
 
+    using Assets.Utils;
+
     public class Enemy1 : Enemy
     {
+        public bool _________________________________;
+
         [SerializeField]
         private float waveFrequency = 2;
 
@@ -32,6 +36,7 @@ namespace Assets._Scripts
 
             var age = Time.time - this.birthTime;
 
+            //左右偏移
             var theta = Mathf.PI * 2 * age / this.waveFrequency;
 
             var sin = Mathf.Sin(theta);
@@ -41,6 +46,7 @@ namespace Assets._Scripts
 
             this.Pos = tempPos;
 
+            //旋转
             var rot = new Vector3(0, sin * this.waveRotY, 0);
             this.transform.rotation = Quaternion.Euler(rot);
 

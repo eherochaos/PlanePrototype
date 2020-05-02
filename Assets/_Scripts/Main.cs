@@ -17,8 +17,6 @@ namespace Assets._Scripts
 
         public float EnemySpawnPerSecond = 0.5f;
 
-        public float EnemySpawnPadding = 1.5f;
-
         public WeaponDefinition[] WeaponDefinitions;
 
         public GameObject PrefabPowerUp;
@@ -74,10 +72,13 @@ namespace Assets._Scripts
             var go = Instantiate(this.PrefabEnemies[ndx]) as GameObject;
 
             var pos = Vector3.zero;
-            var xMin = Utils.CamBounds.min.x + this.EnemySpawnPadding;
-            var xMax = Utils.CamBounds.max.x - this.EnemySpawnPadding;
+            var posBound = Utils.CombineBoundsOfChildren(go);
+            var enemySpawnPaddingX = posBound.max.x - posBound.center.x + 1.5f;
+            var enemySpawnPaddingY = posBound.max.y - posBound.center.y + 1.5f;
+            var xMin = Utils.CamBounds.min.x + enemySpawnPaddingX;
+            var xMax = Utils.CamBounds.max.x - enemySpawnPaddingX;
             pos.x = Random.Range(xMin, xMax);
-            pos.y = Utils.CamBounds.max.y + this.EnemySpawnPadding;
+            pos.y = Utils.CamBounds.max.y + enemySpawnPaddingY;
             go.transform.position = pos;
             this.Invoke("SpawnEnemy",this.enemySpawnRate);
         }
